@@ -181,7 +181,5 @@ async def cours(ctx, *, question):
 
 # ================== RUN ==================
 
-bot.run("MTQ0ODc4MTIzODkzMTQyMzUwMw.GK7vkS.nF9vZVl7r43VB7dDTYAXH_-9EDWZ48aj0cakGU")
-
-
+bot.run("MTQ0ODc4MTIzODkzMTQyMzUwMw.GMC2CN.auDfgVixrRJHtnqffuP7f2jDXMEOYNn3tXe9i0")
 
