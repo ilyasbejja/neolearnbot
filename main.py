@@ -49,7 +49,7 @@ import os
 from groq import Groq
 from dotenv import load_dotenv
 
-client = Groq(api_key="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")
+client = Groq(api_key=os.getenv("LLM_TOKEN"))
 
 def ask_llm(prompt: str) -> str:
     response = client.chat.completions.create(
@@ -181,5 +181,6 @@ async def cours(ctx, *, question):
 
 # ================== RUN ==================
 
-bot.run("MTQ0ODc4MTIzODkzMTQyMzUwMw.GMC2CN.auDfgVixrRJHtnqffuP7f2jDXMEOYNn3tXe9i0")
+bot.run(os.getenv("DISCORD_TOKEN"))
+
 
