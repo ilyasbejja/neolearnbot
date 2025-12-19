@@ -183,4 +183,4 @@ async def cours(ctx, *, question):
 
 # ================== RUN ==================
 
-bot.run(bot_token)
+bot.run(os.getenv("DISCORD_TOKEN"))
