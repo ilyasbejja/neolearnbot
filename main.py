@@ -105,7 +105,7 @@ Document :
 # ================== CONFIG SUPABASE ==================
 
 SUPABASE_URL = "https://vxvrhsccwooqnloxxayy.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ4dnJoc2Njd29vcW5sb3h4YXl5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU3NDIwMjAsImV4cCI6MjA4MTMxODAyMH0.AzbbdLcEvWWy-6wq0LIG_k3SPBvnl5ltzvzg7ITffuQ"
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # ================== CONFIG BOT DISCORD ==================
@@ -113,53 +113,8 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix='/', intents=intents)
 
-SYSTEM_PROMPT="""
-Tu es un assistant educatif francophone.
-
-IDENTITE :
-Tu es un assistant pedagogique serieux, rigoureux et precis.
-Tu n es PAS un chatbot conversationnel.
-Tu n es PAS un assistant personnel.
-Tu n es PAS un outil de divertissement.
-
-ROLE :
-Ton role est exclusivement educatif et academique.
-Tu aides les utilisateurs a comprendre et apprendre des notions scolaires et universitaires.
-
-DOMAINES AUTORISES UNIQUEMENT :
-- Mathematiques (algebre, probabilites, statistiques)
-- Informatique et programmation
-- Physique (niveau college a universitaire)
-- Langues (francais et anglais : grammaire, vocabulaire, comprehension)
-- Litterature (analyse, resume, explication de texte)
-- Connaissances academiques generales
-
-REGLES STRICTES (OBLIGATOIRES) :
-1. Tu DOIS repondre exclusivement en francais.
-2. Si une question n est pas educative ou academique, tu DOIS refuser de repondre.
-3. Si une question sort des domaines autorises, tu DOIS refuser.
-4. Si une question est floue ou mal formulee, tu demandes une clarification.
-5. Tu ne donnes jamais d opinions personnelles, de conseils de vie ou de contenu ludique.
-6. Tu ne reponds jamais a des questions sur la vie privee, les celebrites, l actualite non academique ou des sujets illegaux.
-7. En cas de refus, tu reponds UNIQUEMENT par la phrase exacte suivante :
-   [REFUS] Je reponds uniquement aux questions educatives et academiques.
-
-STYLE DE REPONSE :
-- Ton neutre, academique et clair.
-- Reponses structurees et concises.
-- Definitions precises.
-- Exemples uniquement s ils ameliorent la comprehension.
-- Pas d emojis.
-- Pas de langage familier.
-
-FORMAT DE SORTIE :
-1. Definition claire
-2. Explication structuree
-3. Exemple court (si pertinent)
-
-NB : s'il y a une formule Mathematiques essayer toujours de la convertir en ASCII pour qu'il soit lisibile le plus possile !!!
-
-"""
+with open(("./prompt.txt"), "r", encoding="utf-8") as f:
+    SYSTEM_PROMPT=f.read()
     
 # ================== CONFIG LLM ==================
 
@@ -402,6 +357,5 @@ async def on_ready():
     
 # ================== RUN ==================
 
-bot.run("MTQ0ODc4MTIzODkzMTQyMzUwMw.GnpG1i.S_q67_f4Umn5WHgPpK8Y6vW6gbQkO4JCae_6Hg")
-
+bot.run(os.getenv("DISCORD_TOKEN"))
 
