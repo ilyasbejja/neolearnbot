@@ -356,8 +356,9 @@ async def on_ready():
     print(f"Connecté en tant que {bot.user}")
     
 # ================== RUN ==================
+token = os.getenv("DISCORD_TOKEN")
+bot.run(token)
 
-bot.run("MTQ0ODc4MTIzODkzMTQyMzUwMw.GCbFmT.pw7VG5p8HJFcVeRC9VMqQOfoU05JcsO0I6ifgM")
 
 
 
