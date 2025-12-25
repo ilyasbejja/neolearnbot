@@ -4,3 +4,5 @@ python-dotenv
 supabase
 requests
 groq
+re
+
