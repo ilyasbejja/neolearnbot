@@ -356,8 +356,12 @@ async def on_ready():
     print(f"Connecté en tant que {bot.user}")
     
 # ================== RUN ==================
+print("ENV DISCORD KEYS:", [k for k in os.environ.keys() if "DISCORD" in k])
 token = os.getenv("DISCORD_TOKEN")
-bot.run(token)
+print("DISCORD_TOKEN =", repr(token))
+if token is None:
+    raise RuntimeError("DISCORD_TOKEN est None (variable d'environnement manquante)")
+
 
 
 
