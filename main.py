@@ -105,7 +105,7 @@ Document :
 # ================== CONFIG SUPABASE ==================
 
 SUPABASE_URL = "https://vxvrhsccwooqnloxxayy.supabase.co"
-SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZ4dnJoc2Njd29vcW5sb3h4YXl5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjU3NDIwMjAsImV4cCI6MjA4MTMxODAyMH0.AzbbdLcEvWWy-6wq0LIG_k3SPBvnl5ltzvzg7ITffuQ"
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # ================== CONFIG BOT DISCORD ==================
@@ -358,4 +358,5 @@ async def on_ready():
 # ================== RUN ==================
 
 bot.run(os.getenv("DISCORD_TOKEN"))
+
 
