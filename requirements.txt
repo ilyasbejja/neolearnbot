@@ -1,8 +1,6 @@
 discord.py
-aiohttp
-python-dotenv
 supabase
 requests
 groq
-re
-
+python-dotenv
+reportlab
