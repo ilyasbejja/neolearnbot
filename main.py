@@ -357,7 +357,8 @@ async def on_ready():
     
 # ================== RUN ==================
 
-bot.run("MTQ0ODc4MTIzODkzMTQyMzUwMw.GhrHw-.NWGnHa_JdP_jXK465AV2NPXbU_1umf0VLg0IjY")
+bot.run("MTQ0ODc4MTIzODkzMTQyMzUwMw.GL16zJ.SRCuOj2jt-wFRQKprM9x50tI9TFk9JnGmohbEM")
+
 
 
 
